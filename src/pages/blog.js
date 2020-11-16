@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from "../components/layout"
-import Head from "../components/Head"
+import Head from "../components/head"
 
 import { graphql, useStaticQuery, Link } from "gatsby"
 import styles from "./blog.module.scss"
