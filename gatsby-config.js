@@ -4,35 +4,24 @@
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
 
- require('dotenv').config({
-   path:`.env.${process.env.NODE_ENV}`
- });
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 
 module.exports = {
   /* Your site config here */
-  siteMetadata:{
-    title: 'Full-Stack Bootcamp',
-    author: 'Akhere Ihoeghinlan'
+  siteMetadata: {
+    title: "Akhere's Blog",
+    author: "Akhere Ihoeghinlan",
   },
-  plugins: ["gatsby-plugin-sass", 
+  plugins: [
     `gatsby-transformer-remark`,
     {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
-
-      }
-
-    },
-    {
-      resolve: `gatsby-plugin-prettier-build`,
-      options: {
-        // default values
-        types: ['html','js','css'],
-        concurrency: 20,
-        verbose: true
-      }
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
@@ -51,13 +40,11 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 750,
-              linkImagesToOriginal: false
-            }
-          }
-        ]
-
-      }
-    }
-
-
-]}
+              linkImagesToOriginal: false,
+            },
+          },
+        ],
+      },
+    },
+  ],
+}

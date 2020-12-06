@@ -1,45 +1,67 @@
-import React from 'react'
-import { Link, graphql, useStaticQuery } from "gatsby"
-import styles from "./header.module.scss"
-
-
+import React from "react";
+import { Link, graphql, useStaticQuery } from "gatsby";
+import styles from "../styles/Header.module.css";
 
 const Header = () => {
   const data = useStaticQuery(graphql`
     query {
-      site{
+      site {
         siteMetadata {
           title
           author
         }
       }
     }
-  `)
+  `);
   return (
     <header className={styles.header}>
       <h1>
-        <Link className={styles.title} to="/">
+        <Link className={styles.title} to='/'>
           {data.site.siteMetadata.title}
-          </Link>
+        </Link>
       </h1>
       <nav>
         <ul className={styles.navList}>
           <li>
-            <Link className={styles.navItem} activeClassName={styles.activeNavItem} to="/">Home</Link>
+            <Link
+              className={styles.navItem}
+              activeClassName={styles.activeNavItem}
+              to='/'
+            >
+              Home
+            </Link>
           </li>
           <li>
-            <Link className={styles.navItem} activeClassName={styles.activeNavItem} to="/about">About</Link>
+            <Link
+              className={styles.navItem}
+              activeClassName={styles.activeNavItem}
+              to='/about'
+            >
+              About
+            </Link>
           </li>
           <li>
-            <Link className={styles.navItem} activeClassName={styles.activeNavItem} to="/blog">Blog</Link>
+            <Link
+              className={styles.navItem}
+              activeClassName={styles.activeNavItem}
+              to='/blog'
+            >
+              Blog
+            </Link>
           </li>
           <li>
-            <Link className={styles.navItem} activeClassName={styles.activeNavItem} to="/contact">Contact</Link>
+            <Link
+              className={styles.navItem}
+              activeClassName={styles.activeNavItem}
+              to='/contact'
+            >
+              Contact
+            </Link>
           </li>
         </ul>
       </nav>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
