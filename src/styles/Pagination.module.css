@@ -1,0 +1,54 @@
+.pagination{
+  width: 100%;
+  margin: auto;
+}
+
+.container{
+  width: 100%;
+  margin: 1em auto; 
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.page{
+  padding: 0.2rem 0.4rem;
+  margin: 0.05rem;
+  border-radius: 5%;
+  text-align: center;
+  display: flex;
+  background-color: var(--primary-background-color-2);
+  cursor: pointer;
+  transition: var(--transition);
+
+}
+
+.page:hover{
+  color: var(--primary-color-1);
+  transition: var(--transition);
+
+}
+
+.pageNoClick{
+  cursor: default;
+}
+
+.pageUnClickable{
+  cursor: default;
+  color: #444;
+}
+
+.pageUnClickable:hover{
+  color: #444;
+}
+
+
+.pageNoClick:hover{
+  color: var(--text-primary-color-2);
+  transition: var(--transition);
+
+}
+
+.pageActive{
+  color: var(--primary-color-1);
+}

@@ -44,9 +44,9 @@ const Header = () => {
             <Link
               className={styles.navItem}
               activeClassName={styles.activeNavItem}
-              to='/blog'
+              to='/search'
             >
-              Blog
+              Search
             </Link>
           </li>
           <li>

@@ -1,0 +1,41 @@
+.searchForm{
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+
+}
+
+.center{
+  width: 100%;
+  display: flex;
+  padding: 1rem;
+  border-radius: 0.3rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.label{
+  margin: 0 0.8rem;
+  font-size: 1.8em;
+  
+
+}
+
+.searchBar{
+  margin-right: 0.8rem;
+  width: 50%;
+  border-radius: 0.3rem;
+  border: none;
+  padding: 0.4rem;
+  font-size: 1.3em;
+  background-color: rgb(240, 240, 240);
+  transition: all linear 300ms;
+
+}
+
+.searchBar:focus, .searchBar:hover{
+  background-color: rgb(220, 220, 220);
+  transition: all linear 300ms;
+  transform: scale(1.01)
+
+}
