@@ -5,6 +5,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import styles from "../styles/SinglePost.module.css";
 
 const SinglePost = ({ title, date, content, options, previous, next }) => {
+  let regex = new RegExp("-", "g");
   return (
     <div>
       <h1>{title}</h1>
@@ -13,7 +14,7 @@ const SinglePost = ({ title, date, content, options, previous, next }) => {
       <div className={styles.postBottom}>
         {previous && (
           <Link className='btn' to={`/blog/${previous}`}>
-            {"<< " + previous.replace(/"-"/g, " ")}
+            {"<< " + previous.replace(regex, " ")}
           </Link>
         )}
         <Link className='btn' to={"/blog"}>
@@ -21,7 +22,7 @@ const SinglePost = ({ title, date, content, options, previous, next }) => {
         </Link>
         {next && (
           <Link className='btn' to={`/blog/${next}`}>
-            {next.replace(/"-"/g, " ") + " >>"}
+            {next.replace(regex, " ") + " >>"}
           </Link>
         )}
       </div>
