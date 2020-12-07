@@ -13,7 +13,7 @@ const SinglePost = ({ title, date, content, options, previous, next }) => {
       <div className={styles.postBottom}>
         {previous && (
           <Link className='btn' to={`/blog/${previous}`}>
-            {"<< " + previous.replaceAll("-", " ")}
+            {"<< " + previous.replace(/"-"/g, " ")}
           </Link>
         )}
         <Link className='btn' to={"/blog"}>
@@ -21,7 +21,7 @@ const SinglePost = ({ title, date, content, options, previous, next }) => {
         </Link>
         {next && (
           <Link className='btn' to={`/blog/${next}`}>
-            {next.replaceAll("-", " ") + " >>"}
+            {next.replace(/"-"/g, " ") + " >>"}
           </Link>
         )}
       </div>
