@@ -47,9 +47,6 @@ const Blog = ({ data }) => {
     <Layout>
       <section className='section'>
         <Head title={title} />
-        <p>{prevSlug} </p>
-        <p>{nextSlug} </p>
-
         <SinglePost
           title={title}
           date={date}

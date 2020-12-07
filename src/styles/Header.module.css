@@ -1,11 +1,11 @@
 .header {
-  padding: 1rem 0.5rem 0rem 0.5rem;
+  width: 100%;
 }
 
 .header-center{
   margin: 0 auto;
   max-width: 750px;
-  padding: 1rem 0.5rem 0rem 0.5rem;
+  padding: 1rem 1.5rem 0rem 1.5rem;
   display: flex;
   flex-direction: column;
 }

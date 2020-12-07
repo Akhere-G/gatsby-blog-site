@@ -8,6 +8,9 @@
   transition: all linear 400ms;
   background-attachment: fixed;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .l{
