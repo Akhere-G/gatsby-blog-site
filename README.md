@@ -1,1 +1,1 @@
-A blog site built using Gatsby by Akhere Ihoeghinlan
+A blog site built by Akhere Ihoeghinlan using Gatsby and Contentful for the CMS

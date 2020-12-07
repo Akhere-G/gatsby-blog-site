@@ -1,8 +1,8 @@
 import React from "react";
 import Layout from "../components/layout";
 import Head from "../components/head";
-import { graphql, Link } from "gatsby";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import SinglePost from "../components/singlePost";
+import { graphql } from "gatsby";
 
 //variable $slug is found in context which is made in gatsby-node.js
 export const query = graphql`
@@ -17,28 +17,35 @@ export const query = graphql`
   }
 `;
 const Blog = ({ data }) => {
-  const node = data.contentfulBlogPost;
-  console.log(node);
+  const singlePost = data.contentfulBlogPost;
+  console.log(singlePost);
   const options = {
     renderNode: {
-      "embedded-asset-block": node => {
-        const alt = node.data.target.fields.title["en-US"]; // node.data.target.fields.title['en-us'];
-        const url = node.data.target.fields.file["en-US"].url; //node.data.target.fields.file['en-us'].url;
+      "embedded-asset-block": singlePost => {
+        const alt = singlePost.data.target.fields.title["en-US"];
+        const url = singlePost.data.target.fields.file["en-US"].url;
         return <img alt={alt} src={url}></img>;
       },
     },
   };
 
+  const {
+    title,
+    date,
+    body: { body: content },
+  } = singlePost;
+
+  console.log(content);
   return (
     <Layout>
       <section className='section'>
-        <Head title={node.title} />
-        <h1>{node.title}</h1>
-        <p>{node.date}</p>
-        {documentToReactComponents(JSON.parse(node.body.body), options)}
-        <Link className='btn' to={"/search"}>
-          Back
-        </Link>
+        <Head title={title} />
+        <SinglePost
+          title={title}
+          date={date}
+          content={content}
+          options={options}
+        />
       </section>
     </Layout>
   );
