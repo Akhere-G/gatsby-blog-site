@@ -23,20 +23,26 @@
 }
 
 .nav-item {
-  color: #bbb;
   font-size: 0.9rem;
   margin-right: 1.3rem;
   text-decoration: none;
   transition: all linear 100ms;
-
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  font-weight: 600;
+  background: linear-gradient(to right, #52c4c4, #52c4c4 50%, #e2e4e4 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
 }
 
 .nav-item:hover {
-  color: #f8f8f8;
-  transition: all linear 100ms;
-  transform: scale(1.2);
+  background-position: 0 100%;
 }
 
 .active-nav-item {
-  color: #f8f8f8;
+  background-position: 0 100%;
 }
