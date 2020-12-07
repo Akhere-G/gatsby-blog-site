@@ -3,7 +3,7 @@ import Layout from "../components/layout";
 import Head from "../components/head";
 import PostList from "../components/postList";
 
-import { graphql, useStaticQuery, Link } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 const BlogPage = () => {
   const data = useStaticQuery(graphql`
     query {

@@ -12,21 +12,23 @@
 }
 
 .page{
-  padding: 0.2rem 0.4rem;
+  padding: 0.2rem 0.7rem;
   margin: 0.05rem;
-  border-radius: 5%;
+  border-radius: 10%;
   text-align: center;
   display: flex;
-  background-color: #e4e4e4;
-  color: #020202;
+  background-image:  linear-gradient(rgba(5, 5, 5, 0.9), rgba(5, 5, 5, 0.6));
+  background-color: rgba(0, 0, 0, 0);
+  color: #d4d4d4;
   cursor: pointer;
   transition: all linear 100ms;
 
 }
 
 .page:hover{
-  color: #242424;
-  background-color: #f4f4f4;
+  color: #f4f4f4;
+  background-color: rgba(0, 0, 0, 0.8);
+  
   transition: all linear 100ms;
 
 }
@@ -38,19 +40,14 @@
 
 .pageNoClick:hover{
   color: #666;
-  background-color: #e4e4e4;
+  background-color: rgba(0, 0, 0, 0);
+
+
 
 }
 
-
-.pageNoClick:hover{
-  color: #666;
-  background-color: #e4e4e4;
-  transition: var(--transition);
-
-}
 
 .pageActive{
-  color: #242424;
-  background-color: #f4f4f4;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.8); 
 }

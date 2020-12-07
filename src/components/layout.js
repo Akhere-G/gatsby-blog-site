@@ -5,12 +5,11 @@ import "../styles/index.css";
 import styles from "../styles/Layout.module.css";
 const Layout = ({ children }) => {
   return (
-    <div className={styles.container}>
-      <div className={styles.content}>
-        <Header />
-        {children}
-      </div>
-
+    <div className={styles.hero}>
+      <Header />
+      <main className={styles.container}>
+        <div className={styles.center}>{children}</div>
+      </main>
       <Footer />
     </div>
   );

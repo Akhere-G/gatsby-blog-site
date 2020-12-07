@@ -3,43 +3,41 @@
   margin: auto;
 }
 
-.container h2 {
+.container > h2 {
   text-align: center;
   padding: 1em;
 }
 
-.posts {
-  list-style-type: none;
-  margin: 0;
+.posts{
+  list-style: none;
 }
 
-.post {
-  margin: 1rem 0;
+.post{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8));
+  margin-bottom: 1rem;
+  border-radius: 0.3rem;
+  padding: 1rem;
+  transition: all ease-in 150ms;
 }
 
+.post:hover{
+  transform: scale(1.01);
+  background-color: rgba(25, 25, 25, 0.5);
+  transition: all ease-in 150ms;
 
-.post a {
-    background-color: #f4f4f4;
-    color: #000;
-    text-decoration: none;
-    display: block;
-    padding: 1rem;
-    transition: all linear 300ms;
+}
 
-  }
-
-.post a:hover {
-    background: #e4e4e4;
-    transition: all linear 300ms;
-
-  }
-
-.post h2 {
-    margin-bottom: 0;
-  }
+.post a{
+  color: #e4e4e4;
+  text-decoration: none;
+}
 
 .post p {
-    color: #777;
-    font-size: 0.8rem;
-    font-style: italic;
-  }
+  color: #aaa;
+  font-style: italic;
+  margin: 0.4em 3em 0 0;
+}
+
+.post h2 {
+  margin: 0;
+}

@@ -27,7 +27,7 @@ const PostList = ({ posts }) => {
   }
 
   return (
-    <div>
+    <div className={styles.container}>
       <Pagination {...props} />
       <ol className={styles.posts}>
         {searchedPosts.map(post => {

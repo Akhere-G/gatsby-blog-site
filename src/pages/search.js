@@ -4,7 +4,7 @@ import Head from "../components/head";
 import PostList from "../components/postList";
 import SearchForm from "../components/searchForm";
 
-import { graphql, useStaticQuery, Link } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 
 const SearchPage = () => {
   const data = useStaticQuery(graphql`

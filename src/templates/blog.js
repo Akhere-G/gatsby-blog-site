@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../components/layout";
 import Head from "../components/head";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import GatsbyImage from "gatsby-image";
 
@@ -36,6 +36,9 @@ const Blog = ({ data }) => {
       <h1>{node.title}</h1>
       <p>{node.date}</p>
       {documentToReactComponents(JSON.parse(node.body.body), options)}
+      <Link className='btn' to='/'>
+        Back
+      </Link>
     </Layout>
   );
 };
