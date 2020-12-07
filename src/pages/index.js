@@ -9,7 +9,7 @@ const BlogPage = () => {
     query {
       allContentfulBlogPost(
         sort: { fields: publishedDate, order: DESC }
-        limit: 1
+        limit: 2
       ) {
         edges {
           node {
@@ -25,6 +25,8 @@ const BlogPage = () => {
     }
   `);
   const latestPost = data.allContentfulBlogPost.edges[0].node;
+  const previousPostSlug = data.allContentfulBlogPost.edges[1].node.slug;
+
   const {
     title,
     date,
@@ -42,14 +44,14 @@ const BlogPage = () => {
   };
   return (
     <Layout>
-      <section className='sectionPlain'>
+      <section className='section'>
         <Head title='Blog' />
-        <h1>Blog</h1>
         <SinglePost
           title={title}
           date={date}
           content={content}
           options={options}
+          previous={previousPostSlug}
         />
       </section>
     </Layout>

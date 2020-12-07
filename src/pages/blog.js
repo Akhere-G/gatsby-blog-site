@@ -6,7 +6,7 @@ import SearchForm from "../components/searchForm";
 
 import { graphql, useStaticQuery } from "gatsby";
 
-const SearchPage = () => {
+const BlogPage = () => {
   const data = useStaticQuery(graphql`
     query {
       allContentfulBlogPost(sort: { fields: publishedDate, order: DESC }) {
@@ -37,9 +37,9 @@ const SearchPage = () => {
 
   return (
     <Layout>
-      <Head title='Search' />
+      <Head title='Blog' />
       <section className='sectionPlain'>
-        <h1>Search</h1>
+        <h1>Posts</h1>
         <SearchForm
           searchTerm={searchterm}
           setSearchTerm={setSearchTerm}
@@ -51,4 +51,4 @@ const SearchPage = () => {
   );
 };
 
-export default SearchPage;
+export default BlogPage;

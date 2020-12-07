@@ -6,7 +6,7 @@ import { graphql } from "gatsby";
 
 //variable $slug is found in context which is made in gatsby-node.js
 export const query = graphql`
-  query($slug: String) {
+  query($slug: String, $previous: String, $next: String) {
     contentfulBlogPost(slug: { eq: $slug }) {
       title
       date: publishedDate(formatString: "MMMM Do, YYYY")
@@ -14,11 +14,19 @@ export const query = graphql`
         body
       }
     }
+    previous: contentfulBlogPost(slug: { eq: $previous }) {
+      slug
+    }
+    next: contentfulBlogPost(slug: { eq: $next }) {
+      slug
+    }
   }
 `;
 const Blog = ({ data }) => {
   const singlePost = data.contentfulBlogPost;
-  console.log(singlePost);
+  const prevSlug = data.previous ? data.previous.slug : null;
+  const nextSlug = data.next ? data.next.slug : null;
+
   const options = {
     renderNode: {
       "embedded-asset-block": singlePost => {
@@ -35,16 +43,20 @@ const Blog = ({ data }) => {
     body: { body: content },
   } = singlePost;
 
-  console.log(content);
   return (
     <Layout>
       <section className='section'>
         <Head title={title} />
+        <p>{prevSlug} </p>
+        <p>{nextSlug} </p>
+
         <SinglePost
           title={title}
           date={date}
           content={content}
           options={options}
+          previous={prevSlug}
+          next={nextSlug}
         />
       </section>
     </Layout>

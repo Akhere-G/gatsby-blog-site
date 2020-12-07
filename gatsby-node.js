@@ -1,4 +1,4 @@
-const path = require('path') 
+const path = require("path");
 /*
 module.exports.onCreateNode = ({ node, actions })=> {
   const { createNodeField } = actions
@@ -13,40 +13,40 @@ module.exports.onCreateNode = ({ node, actions })=> {
   }
 }
 */
-module.exports.createPages = async({ graphql, actions }) => {
-  const { createPage } = actions
-  const blogTemplate =  path.resolve('./src/templates/blog.js')
+module.exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions;
+  const blogTemplate = path.resolve("./src/templates/blog.js");
   const res = await graphql(`
-  query {
-    allContentfulBlogPost{
-      edges {
-        node {
-          slug
+    query {
+      allContentfulBlogPost(sort: { fields: publishedDate, order: DESC }) {
+        edges {
+          node {
+            slug
+          }
         }
       }
     }
-  }
-  `)
-  res.data.allContentfulBlogPost.edges.forEach((edge) =>{
+  `);
+  const edges = res.data.allContentfulBlogPost.edges;
+  edges.forEach((edge, index) => {
+    let next = null,
+      previous = null;
+    if (index > 0) {
+      next = edges[index - 1].node.slug;
+    }
+    if (index < edges.length - 1) {
+      previous = edges[index + 1].node.slug;
+    }
 
+    const slug = edge.node.slug;
     createPage({
       component: blogTemplate,
-      path: `/blog/${edge.node.slug}`,
+      path: `/blog/${slug}`,
       context: {
-        slug: edge.node.slug
-      }
-    })
-  })
-
-
-
-
-
-
-
-
-
-
-
-
-}
+        previous,
+        slug,
+        next,
+      },
+    });
+  });
+};

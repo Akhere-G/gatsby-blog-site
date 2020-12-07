@@ -15,7 +15,7 @@ const SearchForm = ({ searchTerm, setSearchTerm, placeholder }) => {
     <section className={styles.searchForm}>
       <form className={styles.center} onSubmit={handleSubmit}>
         <label className={styles.label} htmlFor='SearchInput'>
-          Search blogs
+          Search posts
         </label>
         <input
           type='text'
