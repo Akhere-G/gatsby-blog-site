@@ -24,9 +24,7 @@ const Pagination = ({
     <div className={styles.pagination}>
       <div className={styles.container}>
         <span
-          className={`${styles.page} ${
-            searchPage < 2 && styles.pageUnClickable
-          }`}
+          className={`${styles.page} ${searchPage < 2 && styles.pageNoClick}`}
           onClick={() => {
             if (searchPage > 1) {
               setSearchPage(prev => prev - 1);
@@ -91,7 +89,7 @@ const Pagination = ({
         )}
         <span
           className={`${styles.page} ${
-            searchPage > pageMax - 1 && styles.pageUnClickable
+            searchPage > pageMax - 1 && styles.pageNoClick
           }`}
           onClick={() => {
             if (searchPage < pageMax) {

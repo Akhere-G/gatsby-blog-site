@@ -17,38 +17,40 @@
   border-radius: 5%;
   text-align: center;
   display: flex;
-  background-color: var(--primary-background-color-2);
+  background-color: #e4e4e4;
+  color: #020202;
   cursor: pointer;
-  transition: var(--transition);
+  transition: all linear 100ms;
 
 }
 
 .page:hover{
-  color: var(--primary-color-1);
-  transition: var(--transition);
+  color: #242424;
+  background-color: #f4f4f4;
+  transition: all linear 100ms;
 
 }
 
 .pageNoClick{
   cursor: default;
+  color: #666;
 }
 
-.pageUnClickable{
-  cursor: default;
-  color: #444;
-}
+.pageNoClick:hover{
+  color: #666;
+  background-color: #e4e4e4;
 
-.pageUnClickable:hover{
-  color: #444;
 }
 
 
 .pageNoClick:hover{
-  color: var(--text-primary-color-2);
+  color: #666;
+  background-color: #e4e4e4;
   transition: var(--transition);
 
 }
 
 .pageActive{
-  color: var(--primary-color-1);
+  color: #242424;
+  background-color: #f4f4f4;
 }
