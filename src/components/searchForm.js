@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import styles from "../styles/SearchForm.module.css";
 //import { useGlobalState } from "../context";
 
 const SearchForm = ({ searchTerm, setSearchTerm, placeholder }) => {
+  const searchBarRef = useRef(null);
+
   const handleSubmit = e => {
     e.preventDefault();
   };
@@ -11,6 +13,10 @@ const SearchForm = ({ searchTerm, setSearchTerm, placeholder }) => {
     const { value } = e.target;
     setSearchTerm(value);
   };
+
+  useEffect(() => {
+    searchBarRef.current.focus();
+  }, []);
   return (
     <section className={styles.searchForm}>
       <form className={styles.center} onSubmit={handleSubmit}>
@@ -24,6 +30,7 @@ const SearchForm = ({ searchTerm, setSearchTerm, placeholder }) => {
           placeholder={placeholder}
           value={searchTerm}
           onChange={handleChange}
+          ref={searchBarRef}
         />
       </form>
     </section>
