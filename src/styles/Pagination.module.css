@@ -17,17 +17,18 @@
   border-radius: 10%;
   text-align: center;
   display: flex;
-  background-image:  linear-gradient(rgba(5, 5, 5, 0.9), rgba(5, 5, 5, 0.6));
+  background-image:  linear-gradient(rgba(5, 5, 5, 0.6), rgba(5, 5, 5, 0.5));
   background-color: rgba(0, 0, 0, 0);
   color: #d4d4d4;
   cursor: pointer;
   transition: all linear 100ms;
+  border: none;
 
 }
 
 .page:hover{
   color: #f4f4f4;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.5);
   
   transition: all linear 100ms;
 
@@ -49,5 +50,5 @@
 
 .pageActive{
   color: #fff;
-  background-color: rgba(0, 0, 0, 0.8); 
+  background-color: rgba(0, 0, 0, 0.5); 
 }

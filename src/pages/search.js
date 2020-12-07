@@ -38,13 +38,15 @@ const SearchPage = () => {
   return (
     <Layout>
       <Head title='Search' />
-      <h1>Search</h1>
-      <SearchForm
-        searchTerm={searchterm}
-        setSearchTerm={setSearchTerm}
-        placeholder={"Search for blog posts"}
-      />
-      <PostList posts={posts} />
+      <section className='sectionPlain'>
+        <h1>Search</h1>
+        <SearchForm
+          searchTerm={searchterm}
+          setSearchTerm={setSearchTerm}
+          placeholder={" blog title"}
+        />
+        <PostList posts={posts} />
+      </section>
     </Layout>
   );
 };

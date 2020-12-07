@@ -23,7 +23,7 @@ const Pagination = ({
   return (
     <div className={styles.pagination}>
       <div className={styles.container}>
-        <span
+        <button
           className={`${styles.page} ${searchPage < 2 && styles.pageNoClick}`}
           onClick={() => {
             if (searchPage > 1) {
@@ -33,9 +33,9 @@ const Pagination = ({
           }}
         >
           {"<"}
-        </span>
+        </button>
         {searchPage > 2 && (
-          <span
+          <button
             className={styles.page}
             onClick={() => {
               setSearchPage(1);
@@ -43,13 +43,15 @@ const Pagination = ({
             }}
           >
             1
-          </span>
+          </button>
         )}
-        {searchPage > 2 && (
-          <span className={`${styles.page} ${styles.pageNoClick}`}>...</span>
+        {searchPage > 3 && (
+          <button className={`${styles.page} ${styles.pageNoClick}`}>
+            ...
+          </button>
         )}
         {searchPage > 1 && (
-          <span
+          <button
             className={styles.page}
             onClick={() => {
               setSearchPage(prev => prev - 1);
@@ -57,13 +59,13 @@ const Pagination = ({
             }}
           >
             {searchPage - 1}
-          </span>
+          </button>
         )}
-        <span className={`${styles.page} ${styles.pageActive}`}>
+        <button className={`${styles.page} ${styles.pageActive}`}>
           {searchPage}
-        </span>
+        </button>
         {searchPage < pageMax && (
-          <span
+          <button
             className={styles.page}
             onClick={() => {
               setSearchPage(prev => prev + 1);
@@ -71,13 +73,15 @@ const Pagination = ({
             }}
           >
             {searchPage + 1}
-          </span>
+          </button>
+        )}
+        {searchPage < pageMax - 2 && (
+          <button className={`${styles.page} ${styles.pageNoClick}`}>
+            ...
+          </button>
         )}
         {searchPage < pageMax - 1 && (
-          <span className={`${styles.page} ${styles.pageNoClick}`}>...</span>
-        )}
-        {searchPage < pageMax - 1 && (
-          <span
+          <button
             className={styles.page}
             onClick={() => {
               setSearchPage(pageMax);
@@ -85,9 +89,9 @@ const Pagination = ({
             }}
           >
             {pageMax}
-          </span>
+          </button>
         )}
-        <span
+        <button
           className={`${styles.page} ${
             searchPage > pageMax - 1 && styles.pageNoClick
           }`}
@@ -99,7 +103,7 @@ const Pagination = ({
           }}
         >
           {">"}
-        </span>
+        </button>
       </div>
     </div>
   );

@@ -216,13 +216,32 @@ p {
 
 .btn{
   padding: 0.5em;
-  background-color: #ddd;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4));
   border-radius: 0.3rem;
   text-decoration: none;
-  color: #f84;
+  color: #e4e4e4;
   width: fit-content;
+  transition: all ease-in 150ms;
+
 }
 
+.btn:hover{
+  transform: scale(1.01);
+  color: #f4f4f4;
+  background-color: rgba(0, 0, 0, 0.45);
+  transition: all ease-in 150ms;
+}
+
+.sectionPlain{
+  border-radius: 0.3rem;
+  padding: 1rem 1rem 3rem 1rem ;
+}
+.section{
+  background-color: rgba(0, 0, 0, 0.59);
+  border-radius: 0.3rem;
+  padding: 1rem 1rem 3rem 1rem ;
+  
+}
 
 @media only screen and (max-width: 480px) {
   html {

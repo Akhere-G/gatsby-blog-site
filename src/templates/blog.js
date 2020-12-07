@@ -3,7 +3,6 @@ import Layout from "../components/layout";
 import Head from "../components/head";
 import { graphql, Link } from "gatsby";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import GatsbyImage from "gatsby-image";
 
 //variable $slug is found in context which is made in gatsby-node.js
 export const query = graphql`
@@ -25,20 +24,22 @@ const Blog = ({ data }) => {
       "embedded-asset-block": node => {
         const alt = node.data.target.fields.title["en-US"]; // node.data.target.fields.title['en-us'];
         const url = node.data.target.fields.file["en-US"].url; //node.data.target.fields.file['en-us'].url;
-        return <GatsbyImage alt={alt} src={url}></GatsbyImage>;
+        return <img alt={alt} src={url}></img>;
       },
     },
   };
 
   return (
     <Layout>
-      <Head title={node.title} />
-      <h1>{node.title}</h1>
-      <p>{node.date}</p>
-      {documentToReactComponents(JSON.parse(node.body.body), options)}
-      <Link className='btn' to='/'>
-        Back
-      </Link>
+      <section className='section'>
+        <Head title={node.title} />
+        <h1>{node.title}</h1>
+        <p>{node.date}</p>
+        {documentToReactComponents(JSON.parse(node.body.body), options)}
+        <Link className='btn' to={"/search"}>
+          Back
+        </Link>
+      </section>
     </Layout>
   );
 };

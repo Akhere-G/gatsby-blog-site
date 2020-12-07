@@ -21,9 +21,11 @@ const BlogPage = () => {
   const posts = data.allContentfulBlogPost.edges;
   return (
     <Layout>
-      <Head title='Blog' />
-      <h1>Blog</h1>
-      <PostList posts={posts} />
+      <section className='sectionPlain'>
+        <Head title='Blog' />
+        <h1>Blog</h1>
+        <PostList posts={posts} />
+      </section>
     </Layout>
   );
 };

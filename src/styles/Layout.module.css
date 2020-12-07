@@ -5,7 +5,9 @@
   background-size: cover;
   width: 100%;
   min-height: 100vh;
-
+  transition: all linear 400ms;
+  background-attachment: fixed;
+  position: relative;
 }
 
 .l{
