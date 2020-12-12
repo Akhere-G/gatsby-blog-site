@@ -1,7 +1,8 @@
 .footer {
-  margin-top: 3rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
   text-align: center;
-  padding-bottom: 3rem;
   width: 100%;
 }
 
