@@ -1,17 +1,21 @@
-.postBottom{
+.postBottom {
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
+  margin-top: 2rem;
 }
 
-.postBottom a{
+.postBottom a {
   margin-bottom: 1rem;
 }
 
-
-@media screen and (min-width:600px){
-  .postBottom{
+@media screen and (min-width: 600px) {
+  .postBottom {
     flex-direction: row;
+  }
+
+  .postBottom a {
+    margin-bottom: 0;
   }
 }

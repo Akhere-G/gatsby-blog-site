@@ -38,7 +38,7 @@ const BlogPage = () => {
   return (
     <Layout>
       <Head title='Blog' />
-      <section className='sectionPlain'>
+      <section>
         <h1>Posts</h1>
         <SearchForm
           searchTerm={searchterm}
